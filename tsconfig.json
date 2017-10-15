@@ -1,0 +1,22 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+      "module": "system",
+      "outFile": "build/js/main.js",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "moduleResolution":"node",
+      "allowSyntheticDefaultImports": true
+       
+  },
+  "include": [
+      "src/**/*",
+      "node_modules/phaser/typescript/phaser.comments.d.ts",
+      "node_modules/@type/**/*",
+      "node_modules/firebase/firebase.d.ts"
+
+  ],
+  "exclude": [
+      "**/*.spec.ts"
+  ]
+}
