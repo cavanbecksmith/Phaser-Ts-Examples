@@ -314,4 +314,59 @@ var GameFromScratch;
     }());
     GameFromScratch.UsingStates = UsingStates;
 })(GameFromScratch || (GameFromScratch = {}));
+System.register("Testing/TestGame", [], function (exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
+    var TestGame;
+    return {
+        setters: [],
+        execute: function () {
+            // module MyGame {
+            TestGame = /** @class */ (function () {
+                function TestGame() {
+                    this.game = new Phaser.Game(640, 480, Phaser.AUTO, 'content', {
+                        create: this.create, preload: this.preload
+                    });
+                }
+                TestGame.prototype.preload = function () {
+                    console.log("===============");
+                    console.log("PRELOAD HAPPENS");
+                    console.log("===============");
+                };
+                TestGame.prototype.create = function () {
+                    console.log("===============");
+                    console.log('GAME OBJECTS HAVE BEEN CREATED');
+                    console.log("===============");
+                };
+                return TestGame;
+            }());
+            // } 
+        }
+    };
+});
+System.register("Testing/TestState", [], function (exports_2, context_2) {
+    "use strict";
+    var __moduleName = context_2 && context_2.id;
+    var GameRunningState;
+    return {
+        setters: [],
+        execute: function () {
+            GameRunningState = /** @class */ (function (_super) {
+                __extends(GameRunningState, _super);
+                function GameRunningState() {
+                    return _super.call(this) || this;
+                }
+                GameRunningState.prototype.create = function () {
+                    console.log("PHASER TEST STATE");
+                };
+                GameRunningState.prototype.update = function () {
+                };
+                GameRunningState.prototype.render = function () {
+                };
+                return GameRunningState;
+            }(Phaser.State));
+            exports_2("GameRunningState", GameRunningState);
+        }
+    };
+});
 //# sourceMappingURL=main.js.map
